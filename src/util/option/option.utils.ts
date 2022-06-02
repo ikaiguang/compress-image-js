@@ -1,4 +1,4 @@
-import {DefaultIResponse, IResponse} from "../response/response_type.util";
+import {responseUtil, IResponse} from '../response/response.util';
 import {ICode} from "../response/respone_enum.util";
 
 // ImageFormat 图片格式
@@ -11,10 +11,9 @@ export type Options = {
     output: string,
 }
 
-
 // CheckCompressOptions 检查参数：选项
 export function CheckCompressOptions(options: Options): IResponse {
-    let resp: IResponse = DefaultIResponse()
+    let resp: IResponse = responseUtil.DefaultIResponse()
     switch (options['format'].toUpperCase()) {
         case ImageFormat.PNG:
             break

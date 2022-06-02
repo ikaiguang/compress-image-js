@@ -1,8 +1,7 @@
 import {program} from 'commander';
-import {IResponse} from "./util/response/response_type.util";
 import {Options, CheckCompressOptions} from './util/option/option.utils';
-import responseUtil from './util/response/response_func.util'
-
+import {IResponse} from './util/response/response.util';
+import {responseUtil} from './util/response/response.util';
 
 program
     .description('图片压缩工具')
