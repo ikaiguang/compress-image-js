@@ -20,7 +20,8 @@ export function CheckCompressOptions(options: Options): IResponse {
         default:
             resp.code = ICode.STATUS_NOT_IMPLEMENTED
             resp.reason = ICode[ICode.STATUS_NOT_IMPLEMENTED]
-            resp.message = ICode[ICode.STATUS_NOT_IMPLEMENTED]
+            resp.message = "未实现的图片压缩"
+            resp.metadata = {"format": options['format']}
     }
     return resp
 }

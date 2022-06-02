@@ -1,7 +1,7 @@
 import {ICode} from "./respone_enum.util";
 
 // IResponse 响应
-export type IResponse = {
+export interface IResponse {
     code: ICode,
     reason: string,
     message: string,
@@ -43,6 +43,15 @@ export class ResponseUtil {
     // IsInternalError 服务错误？
     IsInternalError(code: ICode): boolean {
         return code === ICode.STATUS_INTERNAL_SERVER
+    }
+
+    // Error 错误信息
+    Error(err: IResponse): string {
+        let s = `code=${err.code} reason=${err.reason} message=${err.message} metadata=`
+        if (err.metadata !== undefined) {
+            s += `${JSON.stringify(err.metadata)}`
+        }
+        return s
     }
 }
 

@@ -16,5 +16,5 @@ let options: Options = program.opts();
 // 检查参数
 let checkOptionResult: IResponse = CheckCompressOptions(options)
 if (!responseUtil.IsOK(checkOptionResult.code)) {
-    console.trace(checkOptionResult.reason)
+    console.trace("参数错误 : ", responseUtil.Error(checkOptionResult))
 }
