@@ -25,14 +25,30 @@ export class ResponseUtil {
     }
 
     // NewIResponse 初始化一个响应
-    NewIResponse(code: ICode): IResponse {
+    NewIResponse(code: ICode, msg: string, md?: { [key: string]: any; }): IResponse {
         return {
             code: code,
             reason: ICode[code],
-            message: "",
+            message: msg,
+            data: {},
+            metadata: md,
+        }
+    }
+
+    // NewUnimplementedIResponse 初始化：未实现
+    NewUnimplementedIResponse(msg: string, md?: { [key: string]: any; }): IResponse {
+        let resp = {
+            code: ICode["STATUS_NOT_IMPLEMENTED"],
+            reason: ICode[ICode["STATUS_NOT_IMPLEMENTED"]],
+            message: "未实现",
             data: {},
             metadata: {},
         }
+        if (msg !== "") resp.message = msg
+        if (md !== undefined) resp.metadata = md
+        // if (data !== undefined) resp.data = data
+
+        return resp
     }
 
     // IsOK 成功？
