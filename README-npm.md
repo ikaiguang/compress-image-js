@@ -14,4 +14,9 @@ npm login
 npm publish
 npm publish --access=public
 
+# 发布新版本
+# 修改package.json版本。
+# GIT打标签后推送
+npm publish
+
 ```
