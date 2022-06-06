@@ -6,6 +6,9 @@
   "main": "dist/index.js",
   "module": "dist/compress-picture-js.esm.js",
   "typings": "dist/index.d.ts",
+  "bin": {
+    "compress-picture-js": "dist/index.js"
+  },
   "files": [
     "dist",
     "src"
