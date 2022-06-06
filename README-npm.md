@@ -14,4 +14,8 @@ npm login
 npm publish
 npm publish --access=public
 
+# 新版本说明
+npm version 0.0.2
+npm version patch 0.0.2
+
 ```
