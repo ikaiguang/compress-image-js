@@ -17,6 +17,7 @@ export type IOptions = {
   format: IImageFormat;
   input: string;
   output: string;
+  quality: number;
 };
 
 // CheckCompressOptions 检查参数：选项
@@ -24,6 +25,7 @@ export function CheckCompressOptions(options: IOptions): IResponse {
   let resp: IResponse = responseUtil.DefaultIResponse();
 
   // 执行动作
+  // console.log(options)
   switch (options['action'].toLowerCase()) {
     case IImageAction.COMPRESS:
       break;

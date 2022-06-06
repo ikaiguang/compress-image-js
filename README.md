@@ -17,14 +17,33 @@ yarn build
 yarn main \
   -a compress \
   -f png \
-  -i ./mytest/testdata/pug.png \
-  -o ./mytest/testdata/pug-pp.png
-
+  -q 50 \
+  -i ./mytest/testdata/mbike.png \
+  -o ./mytest/testdata/mbike-50.png
 yarn main \
   -a compress \
   -f png \
+  -q 50 \
   -i ./mytest/testdata/mouse.png \
-  -o ./mytest/testdata/mouse-pp.png
+  -o ./mytest/testdata/mouse-50.png
+yarn main \
+  -a compress \
+  -f png \
+  -q 50 \
+  -i ./mytest/testdata/pug.png \
+  -o ./mytest/testdata/pug-50.png
+yarn main \
+  -a compress \
+  -f png \
+  -q 50 \
+  -i ./mytest/testdata/rose-icon.png \
+  -o ./mytest/testdata/rose-icon-50.png
+yarn main \
+  -a compress \
+  -f png \
+  -q 50 \
+  -i ./mytest/testdata/spritesheet.png \
+  -o ./mytest/testdata/spritesheet-50.png
 
 
 ```

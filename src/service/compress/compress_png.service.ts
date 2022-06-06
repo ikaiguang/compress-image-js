@@ -13,9 +13,22 @@ export function CompressPNG(options: IOptions): IResponse {
   const imgBuffer = ReadFile(options['input']);
   const img = decode(imgBuffer);
   const rgba: ArrayBuffer[] = toRGBA8(img);
-  const pngImg = encode(rgba, img.width, img.height, 0);
 
+  // 压缩比例：cnum = Or just use 0 for lossless / 256 for lossy.
+  const compressQuality = pngCompressQuality(options['quality']);
+  // console.log(compressQuality)
+  const pngImg = encode(rgba, img.width, img.height, compressQuality);
+
+  // 写文件
   let callback = () => {};
   WriteFile(options['output'], pngImg, callback);
   return resp;
+}
+
+// pngCompressQuality png压缩质量
+function pngCompressQuality(quality: number): number {
+  if (quality <= 0 || quality >= 100) {
+    return 0;
+  }
+  return Math.ceil((256 * (100 - quality)) / 100);
 }
