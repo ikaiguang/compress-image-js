@@ -16,12 +16,12 @@ program.parse();
 let options: IOptions = program.opts();
 let checkOptionResult: IResponse = CheckCompressOptions(options);
 if (!responseUtil.IsOK(checkOptionResult.code)) {
-  console.trace('参数错误 : ', responseUtil.Error(checkOptionResult));
+  throw new Error('参数错误 : ' + responseUtil.Error(checkOptionResult));
 }
 
 // 执行命令
 let execResponse: IResponse = ExecCommand(options);
 if (!responseUtil.IsOK(execResponse.code)) {
-  console.trace('执行失败 : ', responseUtil.Error(checkOptionResult));
+  throw new Error('执行失败 : ' + responseUtil.Error(checkOptionResult));
 }
-console.log('执行成功');
+console.log('✨ ', '执行成功');

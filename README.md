@@ -14,7 +14,18 @@ yarn start
 yarn build
 
 # 运行测试
-yarn main -f png -i ./mytest/testdata/pug.png -o ./mytest/testdata/pug-pp.png 
+yarn main \
+  -a compress \
+  -f png \
+  -i ./mytest/testdata/pug.png \
+  -o ./mytest/testdata/pug-pp.png
+
+yarn main \
+  -a compress \
+  -f png \
+  -i ./mytest/testdata/mouse.png \
+  -o ./mytest/testdata/mouse-pp.png
+
 
 ```
 

@@ -15,11 +15,10 @@ export function ExecCommand(options: IOptions): IResponse {
       return CompressImage(options);
     default:
       // 参数错误
-      console.trace(
-        '参数错误：无效的执行动作；options=',
-        JSON.stringify(options)
+      return responseUtil.NewUnimplementedIResponse(
+        '参数错误：无效的执行动作',
+        options
       );
-      return responseUtil.NewUnimplementedIResponse('参数错误');
   }
 }
 
@@ -31,10 +30,9 @@ export function CompressImage(options: IOptions): IResponse {
       return CompressPNG(options);
     default:
       // 参数错误
-      console.trace(
-        '参数错误：无效的图片类型；options=',
-        JSON.stringify(options)
+      return responseUtil.NewUnimplementedIResponse(
+        '参数错误：无效的图片类型',
+        options
       );
-      return responseUtil.NewUnimplementedIResponse('参数错误');
   }
 }
