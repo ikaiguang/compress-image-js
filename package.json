@@ -1,6 +1,6 @@
 {
   "name": "compress-picture-js",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": "ikaiguang",
   "license": "MIT",
   "main": "dist/index.js",
