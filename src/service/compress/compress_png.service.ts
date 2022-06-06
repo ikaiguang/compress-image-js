@@ -27,7 +27,7 @@ export function CompressPNG(options: IOptions): IResponse {
 
 // pngCompressQuality png压缩质量
 function pngCompressQuality(quality: number): number {
-  if (quality <= 0 || quality >= 100) {
+  if (quality < 0 || quality >= 100) {
     return 0;
   }
   return Math.ceil((256 * (100 - quality)) / 100);

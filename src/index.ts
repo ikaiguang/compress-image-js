@@ -10,7 +10,7 @@ program
   .option('-f, --format <图片类型>', '图片文件格式', '')
   .option('-i, --input <图片路径>', '图片输入路径', '')
   .option('-o, --output <图片路径>', '图片输出路径', '')
-  .option('-q, --quality <图片质量>', '图片压缩质量', '0');
+  .option('-q, --quality <图片质量>', '图片压缩质量：0-100', '0');
 program.parse();
 
 // 检查参数
@@ -25,4 +25,4 @@ let execResponse: IResponse = ExecCommand(options);
 if (!responseUtil.IsOK(execResponse.code)) {
   throw new Error('执行失败 : ' + responseUtil.Error(checkOptionResult));
 }
-console.log('✨ ✨ 🚀 Done.');
+// console.log('✨ ✨ 🚀 Done.');

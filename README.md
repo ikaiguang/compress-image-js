@@ -13,37 +13,25 @@
 yarn start
 yarn build
 
+# 帮助
+yarn main:help
+# or node
+node ./dist/index.js --help
+
 # 运行测试
 yarn main \
   -a compress \
   -f png \
   -q 50 \
-  -i ./mytest/testdata/mbike.png \
-  -o ./mytest/testdata/mbike-50.png
-yarn main \
+  -i ./testdata/png/mbike.png \
+  -o ./testdata/png/mbike-50.png
+# or node
+node ./dist/index.js \
   -a compress \
   -f png \
   -q 50 \
-  -i ./mytest/testdata/mouse.png \
-  -o ./mytest/testdata/mouse-50.png
-yarn main \
-  -a compress \
-  -f png \
-  -q 50 \
-  -i ./mytest/testdata/pug.png \
-  -o ./mytest/testdata/pug-50.png
-yarn main \
-  -a compress \
-  -f png \
-  -q 50 \
-  -i ./mytest/testdata/rose-icon.png \
-  -o ./mytest/testdata/rose-icon-50.png
-yarn main \
-  -a compress \
-  -f png \
-  -q 50 \
-  -i ./mytest/testdata/spritesheet.png \
-  -o ./mytest/testdata/spritesheet-50.png
+  -i ./testdata/png/mbike.png \
+  -o ./testdata/png/mbike-50.png
 
 
 ```
