@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import { program } from 'commander';
 import { CheckCompressOptions, IOptions } from './util/option/option.utils';
 import { IResponse, responseUtil } from './util/response/response.util';

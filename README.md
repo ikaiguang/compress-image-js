@@ -14,7 +14,7 @@
 ```shell
 
 # 初始化项目
-#npx tsdx create compress-image-js
+# npx dts-cli create compress-picture-js
 
 # 安装依赖
 yarn install
