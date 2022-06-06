@@ -5,6 +5,13 @@
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
+  "bin": {
+    "compress-picture-js": "dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ikaiguang/compress-image-js.git"
+  },
   "files": [
     "dist",
     "src"
@@ -23,13 +30,6 @@
     "analyze": "size-limit --why",
     "main": "node ./dist/index.js",
     "main:help": "node ./dist/index.js --help"
-  },
-  "bin": {
-    "compress-image-js": "./dist/index.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/ikaiguang/compress-image-js.git"
   },
   "husky": {
     "hooks": {
