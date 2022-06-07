@@ -9,6 +9,24 @@
 
 - PNG图片压缩；[PNG压缩质量例子](https://blog.photopea.com/png-minifier-inside-photopea.html#examples)
 
+## 全局安装
+
+```shell
+
+# 全局安装
+#sudo npm i compress-picture-js@0.0.5 --location=global
+sudo npm i compress-picture-js -g
+
+# 运行测试
+compress-picture-js \
+  -a compress \
+  -f png \
+  -q 50 \
+  -i ./path/to/dir/testdata.png \
+  -o ./path/to/dir/testdata-50.png
+
+```
+
 ## 运行测试
 
 ```shell
