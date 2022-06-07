@@ -20,3 +20,10 @@ npm publish --access=public
 npm publish
 
 ```
+
+## 安装
+
+```shell
+# 全局安装
+sudo npm i compress-picture-js@0.0.5 --location=global
+```

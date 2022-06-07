@@ -2,7 +2,7 @@
 
 图片压缩工具
 
-- 基于：[tsdx](https://github.com/jaredpalmer/tsdx)
+- 基于：[dts-cli](https://www.npmjs.com/package/dts-cli)
 - 基于：[UPNG.js](https://github.com/photopea/UPNG.js)
 
 ## 目前支持
