@@ -42,7 +42,9 @@ compress-picture-js \
 ```shell
 
 # 初始化项目
+# sudo npm install -g typescript
 # npx dts-cli create compress-picture-js
+# tsc --init
 
 # 安装依赖
 yarn install

@@ -1,4 +1,4 @@
-import { ICode } from './respone_enum.util';
+import { ICode } from './respone_enum.util.js';
 
 // IMessage 响应信息
 export const IMessage = {

@@ -1,7 +1,8 @@
 // ICode 响应代码
 export enum ICode {
   OK = 0,
-  UNKNOWN = 1,
+  FAILED = 1,
+  UNKNOWN = 2,
 
   // STATUS_CONTINUE Continue
   STATUS_CONTINUE = 100,

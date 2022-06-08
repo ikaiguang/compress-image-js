@@ -1,12 +1,12 @@
 #!/usr/bin/env node
 import { program } from 'commander';
-import { CheckCompressOptions, IOptions } from './util/option/option.utils';
-import { IResponse, responseUtil } from './util/response/response.util';
-import { ExecCommand } from './adapter/exec.adapter';
+import { CheckCompressOptions, IOptions } from './util/option/option.util.js';
+import { IResponse, responseUtil } from './util/response/response.util.js';
+import { ExecCommand } from './adapter/exec.adapter.js';
 
 // 解析参数
 program
-  .description('图片压缩工具')
+  .description('图片压缩工具；例子：compress-picture-js -f jpg -q 80 -i ./images/a.jpeg -o ./images/compress/a.jpeg')
   .option('-a, --action <执行动作>', '执行动作：压缩', 'compress')
   .option('-f, --format <图片类型>', '图片文件格式', '')
   .option('-i, --input <图片路径>', '图片输入路径', '')

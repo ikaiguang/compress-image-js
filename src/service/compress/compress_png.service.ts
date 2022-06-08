@@ -1,7 +1,7 @@
-import { IOptions } from '../../util/option/option.utils';
-import { IResponse, responseUtil } from '../../util/response/response.util';
-import { ReadFile, WriteFile } from '../../util/file/file.util';
-import { decode, encode, toRGBA8 } from 'upng-js';
+import {IOptions} from '../../util/option/option.util.js';
+import {IResponse, responseUtil} from '../../util/response/response.util.js';
+import {CreateDirSyncFromFilename, ReadFileSync, WriteFileSync} from '../../util/file/file.util.js';
+import pnglib from 'upng-js';
 
 // CompressPNG 压缩PNG
 export function CompressPNG(options: IOptions): IResponse {
@@ -9,18 +9,20 @@ export function CompressPNG(options: IOptions): IResponse {
   // console.log("🚀", options);
 
   // 图片
-  const imgBuffer = ReadFile(options['input']);
-  const img = decode(imgBuffer);
-  const rgba: ArrayBuffer[] = toRGBA8(img);
+  const imgBuffer = ReadFileSync(options['input']);
+  const img = pnglib.decode(imgBuffer);
+  const rgba: ArrayBuffer[] = pnglib.toRGBA8(img);
 
   // 压缩比例：cnum = Or just use 0 for lossless / 256 for lossy.
   const compressQuality = pngCompressQuality(options['quality']);
   // console.log("🚀", compressQuality)
-  const pngImg = encode(rgba, img.width, img.height, compressQuality);
+  const pngImg = pnglib.encode(rgba, img.width, img.height, compressQuality);
+
+  // 检查输出文件夹
+  CreateDirSyncFromFilename(options['output'])
 
   // 写文件
-  let callback = () => {};
-  WriteFile(options['output'], pngImg, callback);
+  WriteFileSync(options['output'], pngImg);
   return resp;
 }
 

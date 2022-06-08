@@ -3,9 +3,10 @@
   "version": "0.0.5",
   "license": "MIT",
   "author": "ikaiguang",
-  "main": "dist/index.js",
+  "exports": "./dist/index.js",
   "module": "dist/compress-picture-js.esm.js",
   "typings": "dist/index.d.ts",
+  "type": "module",
   "bin": {
     "compress-picture-js": "dist/index.js"
   },

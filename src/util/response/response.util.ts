@@ -1,4 +1,4 @@
-import { ICode } from './respone_enum.util';
+import { ICode } from './respone_enum.util.js';
 
 // IResponse 响应
 export interface IResponse {

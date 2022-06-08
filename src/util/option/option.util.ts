@@ -1,5 +1,5 @@
-import {responseUtil, IResponse} from '../response/response.util';
-import {ICode} from '../response/respone_enum.util';
+import { responseUtil, IResponse } from '../response/response.util.js';
+import { ICode } from '../response/respone_enum.util.js';
 
 // IImageFormat 图片格式
 export enum IImageFormat {
@@ -35,7 +35,7 @@ export function CheckCompressOptions(options: IOptions): IResponse {
       resp.code = ICode.STATUS_NOT_IMPLEMENTED;
       resp.reason = ICode[ICode.STATUS_NOT_IMPLEMENTED];
       resp.message = '未实现';
-      resp.metadata = {action: options['action']};
+      resp.metadata = { action: options['action'] };
       return resp;
   }
 
@@ -44,14 +44,14 @@ export function CheckCompressOptions(options: IOptions): IResponse {
     case IImageFormat.PNG:
       break;
     case IImageFormat.JPG:
-      break
+      break;
     case IImageFormat.JPEG:
-      break
+      break;
     default:
       resp.code = ICode.STATUS_NOT_IMPLEMENTED;
       resp.reason = ICode[ICode.STATUS_NOT_IMPLEMENTED];
       resp.message = '未实现的图片压缩';
-      resp.metadata = {format: options['format']};
+      resp.metadata = { format: options['format'] };
       return resp;
   }
   return resp;
