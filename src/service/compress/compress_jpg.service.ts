@@ -1,9 +1,11 @@
 import {IOptions} from '../../util/option/option.util.js';
 import {IResponse, responseUtil} from '../../util/response/response.util.js';
-import {ExecCommand, ExecCommandSync, IExecCommandResult, IsIExecCommandResult} from "../../util/cmd/cmd.util.js";
+import {CreateDirSyncFromFilename} from "../../util/file/file.util.js";
+import {ExecCommandSync} from "../../util/cmd/cmd.util.js";
 import {ICode} from '../../util/response/respone_enum.util.js';
 import mozjpeg from 'mozjpeg';
-import {CreateDirSyncFromFilename} from "../../util/file/file.util.js";
+import {ExecFileException} from "child_process";
+
 
 // CompressJPG 压缩JPG
 export function CompressJPG(options: IOptions): IResponse {
@@ -21,47 +23,20 @@ export function CompressJPG(options: IOptions): IResponse {
     options['input'],
   ];
 
-  // 执行文件
-  // execFile(mozjpeg, commandArs, err => {
-  //   console.log(err !== null)
-  //   if (err !== null) {
-  //     console.log(11111)
-  //     resp.code = ICode.FAILED;
-  //     resp.reason = ICode[ICode.FAILED];
-  //     resp.message = err.message;
-  //     resp.metadata = err;
-  //   }
-  // });
-  (async () => {
-    await ExecCommand(mozjpeg, commandArs).then((value) => {
-    }).catch((reason) => {
-      console.log(reason)
-      resp.code = ICode.FAILED;
-      resp.reason = ICode[ICode.FAILED];
-      const result = reason as IExecCommandResult;
-      // 是执行响应结果
-      if (IsIExecCommandResult(result)) {
-        // 有错误 || 无错误
-        if (result.error) {
-          // 有错误
-          resp.message = result.error.message;
-          resp.metadata = result.error;
-        } else if (result.stderr !== '') {
-          // 有错误
-          resp.message = result.stderr
-        } else if (result.stdout !== '') {
-          // 有输出
-          resp.message = result.stdout
-        } else {
-          resp.message = "执行失败：" + JSON.stringify(options)
-        }
-      } else {
-        // 不是执行错误
-        resp.message = JSON.stringify(reason)
-      }
-    });
-  })();
-  return resp;
+  try {
+    ExecCommandSync(mozjpeg, commandArs)
+  } catch (e: any) {
+    resp.code = ICode.FAILED
+    resp.reason = ICode[ICode.FAILED]
+    let err = e as ExecFileException
+    if (err.message !== "") {
+      resp.message = err.message
+      resp.metadata = err
+    } else {
+      resp.message = "压缩JPG/JPEG失败：" + JSON.stringify(options)
+    }
+  }
+  return resp
 }
 
 // jpgCompressQuality jpg压缩质量

@@ -4,6 +4,7 @@
 
 - 基于：[dts-cli](https://www.npmjs.com/package/dts-cli)
 - 基于：[UPNG.js](https://github.com/photopea/UPNG.js)
+- 基于：[mozjpeg-bin](https://github.com/imagemin/mozjpeg-bin)
 
 ## 目前支持
 
