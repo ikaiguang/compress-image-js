@@ -26,17 +26,23 @@
     "main": "node ./dist/index.js",
     "main:help": "node ./dist/index.js --help"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ikaiguang/compress-image-js.git"
+  },
   "keywords": [
     "image",
     "picture",
     "compress",
     "compressor",
-    "compressor.js",
     "image-compressor",
     "lossy-compression",
     "javascript",
+    "image-compress",
+    "compress-image",
     "compress-png",
     "compress-jpg",
+    "compress-jpeg",
     "compress-apng"
   ],
   "husky": {
