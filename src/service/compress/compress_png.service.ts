@@ -1,6 +1,10 @@
-import {IOptions} from '../../util/option/option.util.js';
-import {IResponse, responseUtil} from '../../util/response/response.util.js';
-import {CreateDirSyncFromFilename, ReadFileSync, WriteFileSync} from '../../util/file/file.util.js';
+import { IOptions } from '../../util/option/option.util.js';
+import { IResponse, responseUtil } from '../../util/response/response.util.js';
+import {
+  CreateDirSyncFromFilename,
+  ReadFileSync,
+  WriteFileSync,
+} from '../../util/file/file.util.js';
 import pnglib from 'upng-js';
 
 // CompressPNG 压缩PNG
@@ -19,7 +23,7 @@ export function CompressPNG(options: IOptions): IResponse {
   const pngImg = pnglib.encode(rgba, img.width, img.height, compressQuality);
 
   // 检查输出文件夹
-  CreateDirSyncFromFilename(options['output'])
+  CreateDirSyncFromFilename(options['output']);
 
   // 写文件
   WriteFileSync(options['output'], pngImg);
