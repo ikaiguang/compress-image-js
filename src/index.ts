@@ -24,6 +24,6 @@ if (!responseUtil.IsOK(checkOptionResult.code)) {
 // 执行命令
 let execResponse: IResponse = ExecCommand(options);
 if (!responseUtil.IsOK(execResponse.code)) {
-  throw new Error('执行失败 : ' + responseUtil.Error(checkOptionResult));
+  throw new Error('执行失败 : ' + responseUtil.Error(execResponse));
 }
 // console.log('✨ ✨ 🚀 Done.');

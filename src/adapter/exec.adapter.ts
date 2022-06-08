@@ -3,8 +3,9 @@ import {
   IImageFormat,
   IOptions,
 } from '../util/option/option.utils';
-import { IResponse, responseUtil } from '../util/response/response.util';
-import { CompressPNG } from '../service/compress/compress_png.service';
+import {IResponse, responseUtil} from '../util/response/response.util';
+import {CompressPNG} from '../service/compress/compress_png.service';
+import {CompressJPG} from "../service/compress/compress_jpg.service";
 
 // ExecCommand 执行命令
 export function ExecCommand(options: IOptions): IResponse {
@@ -27,7 +28,13 @@ export function CompressImage(options: IOptions): IResponse {
   switch (options['format']) {
     case IImageFormat.PNG:
       // 压缩PNG
-      return CompressPNG(options);
+      return CompressPNG(options)
+    case IImageFormat.JPG:
+      // 压缩JPG
+      return CompressJPG(options);
+    case IImageFormat.JPEG:
+      // 压缩JPG
+      return CompressJPG(options);
     default:
       // 参数错误
       return responseUtil.NewUnimplementedIResponse(

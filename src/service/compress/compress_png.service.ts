@@ -6,8 +6,7 @@ import { decode, encode, toRGBA8 } from 'upng-js';
 // CompressPNG 压缩PNG
 export function CompressPNG(options: IOptions): IResponse {
   let resp = responseUtil.DefaultIResponse();
-  // console.log("",options);
-  // console.log(upng)
+  // console.log("🚀", options);
 
   // 图片
   const imgBuffer = ReadFile(options['input']);
@@ -16,7 +15,7 @@ export function CompressPNG(options: IOptions): IResponse {
 
   // 压缩比例：cnum = Or just use 0 for lossless / 256 for lossy.
   const compressQuality = pngCompressQuality(options['quality']);
-  // console.log(compressQuality)
+  // console.log("🚀", compressQuality)
   const pngImg = encode(rgba, img.width, img.height, compressQuality);
 
   // 写文件
