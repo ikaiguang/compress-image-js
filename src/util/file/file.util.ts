@@ -26,8 +26,18 @@ export function CreateDirSync(dir: string) {
 // CreateDirSyncFromFilename 创建目录；来自文件
 export function CreateDirSyncFromFilename(filename: string) {
   let dir = path.dirname(filename);
-  if (fs.existsSync(dir)) {
+  if (ExistsSync(dir)) {
     return;
   }
   CreateDirSync(dir);
+}
+
+// ExistsSync 检查文件是否存在
+export function ExistsSync(path: string): boolean {
+  return fs.existsSync(path);
+}
+
+// UnlinkSync 移除文件
+export function UnlinkSync(path: string): void {
+  fs.unlinkSync(path);
 }
