@@ -64,9 +64,9 @@ node ./dist/index.js --help
 yarn main \
   -a compress \
   -f png \
-  -q 50 \
+  -q 80 \
   -i ./testdata/png/mbike.png \
-  -o ./testdata/png/mbike-50.png
+  -o ./testdata/png/mbike-80.png
 # 运行测试：JPG/JPEG
 yarn main \
   -a compress \
