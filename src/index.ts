@@ -17,7 +17,7 @@ program
   .option('-i, --input <图片路径>', '图片输入路径', '')
   .option('-o, --output <图片路径>', '图片输出路径', '')
   .option('-q, --quality <图片质量>', '图片压缩质量：0-100', '0')
-  .version('0.0.7', '-v, --version');
+  .version('0.0.8', '-v, --version');
 program.parse();
 
 // 检查参数

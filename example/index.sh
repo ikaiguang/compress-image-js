@@ -1,5 +1,11 @@
 #!/bin/sh
 
+# 报错停止运行
+set -e
+
+# 版本号
+echo "软件版本：$(node ./dist/index.js --version)"
+
 # 运行测试：PNG
 # compress-picture-js === node ./dist/index.js
 echo "运行测试：PNG"
